@@ -9,7 +9,6 @@ var compress = require('koa-compress');
 var logger = require('koa-logger');
 var router = require('koa-router');
 var load = require('./lib/load');
-var redis = require('redis');
 var koa = require('koa');
 
 /**
@@ -47,14 +46,6 @@ function api(opts) {
   // compression
 
   app.use(compress());
-
-  // rate limiting
-
-  app.use(ratelimit({
-    max: opts.ratelimit,
-    duration: opts.duration,
-    db: redis.createClient()
-  }));
 
   // routing
 
