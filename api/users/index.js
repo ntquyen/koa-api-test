@@ -28,7 +28,6 @@ exports.create = function *(name){
   var user = yield parse(this);
   if (!user.name) this.throw(400, '.name required');
   r.table('test').insert(user);
-  users[user.name] = user;
   this.status = 201;
   this.body = user;
 };
