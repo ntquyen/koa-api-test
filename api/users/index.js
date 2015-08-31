@@ -1,6 +1,6 @@
 'use strict';
 
-const r = require('../db').rethinkdb.r;
+const r = require('../../db').rethinkdb.r;
 const parse = require('co-body');
 
 /**

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: koa-api-test
+  name: koa-api-test-service
+spec:
+  selector:
+    app: koa-api-test
+  ports:
+    - port: 4000
+      targetPort: 4000

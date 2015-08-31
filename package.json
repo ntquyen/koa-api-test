@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "repository": "koajs/api-boilerplate",
   "description": "Koa API boilerplate application",
-  "script": {
-    "start": "node index.js"
+  "scripts": {
+    "start": "node bin/api"
   },
   "keywords": [
     "koa",

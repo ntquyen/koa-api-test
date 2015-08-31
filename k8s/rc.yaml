@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: koa-api-test
+  name: koa-api-test-rc
+spec:
+  - restartPolicy: Always
+    containers:
+    - image: quyennt/koa-api-test:0.0.1
+      name: koa-api-test
+      ports:
+      - containerPort: 4000
+        name: app-port
+    - image: gcr.io/google_containers/kubectl:v0.18.0-120-gaeb4ac55ad12b1-dirty
+      name: kubectl
+      imagePullPolicy: Always
+      args:
+        - proxy
+        - -p
+        - "8001"
