@@ -8,7 +8,7 @@ const parse = require('co-body');
  */
 
 exports.index = function *(){
-  var users = yield r.table('test');
+  var users = yield r.table('users');
   this.body = users;
 };
 
@@ -27,7 +27,7 @@ exports.show = function *(){
 exports.create = function *(name){
   var user = yield parse(this);
   if (!user.name) this.throw(400, '.name required');
-  r.table('test').insert(user);
+  yield r.table('users').insert(user);
   this.status = 201;
   this.body = user;
 };

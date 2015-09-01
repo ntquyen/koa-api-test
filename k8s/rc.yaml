@@ -17,7 +17,7 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      - image: quyennt/koa-api-test:0.0.1
+      - image: quyennt/koa-api-test-onbuild
         name: koa-api-test
         ports:
         - containerPort: 4000
@@ -25,10 +25,3 @@ spec:
         env:
         - name: RETHINKDB_HOST
           value: rethinkdb-driver
-      - image: gcr.io/google_containers/kubectl:v0.18.0-120-gaeb4ac55ad12b1-dirty
-        name: kubectl
-        imagePullPolicy: Always
-        args:
-          - proxy
-          - -p
-          - "8001"
