@@ -8,12 +8,8 @@ const parse = require('co-body');
  */
 
 exports.index = function *(){
-  // var users = yield r.table('users');
-  // this.body = users;
-  this.body = {
-    name: 'Quyen',
-    info: ""
-  };
+  var users = yield r.table('users');
+  this.body = users;
 };
 
 /**
