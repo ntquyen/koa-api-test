@@ -3,7 +3,7 @@
 let Rethinkdbdash = require('rethinkdbdash');
 
 let config = {
-  host: process.env.RETHINKDB_HOST || 'localhost',
+  host: process.env.RETHINKDB_HOST || 'rethinkdb-driver',
   db: 'test',
   port: process.env.RETHINKDB_PORT || 28015
 };
