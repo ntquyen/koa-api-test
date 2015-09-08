@@ -1,10 +1,6 @@
-FROM quyennt/iojs:2.3.4
+FROM iojs:2.5.0-onbuild
 
 MAINTAINER quyen@agencyrevolution.com
-
-RUN git clone https://github.com/ntquyen/koa-api-test.git
-
-WORKDIR /koa-api-test
 
 RUN npm install
 
