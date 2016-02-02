@@ -1,6 +1,6 @@
 'use strict';
 
-const r = require('../../db').rethinkdb.r;
+// const r = require('../../db').rethinkdb.r;
 const parse = require('co-body');
 
 /**
@@ -26,8 +26,8 @@ exports.show = function *(){
 
 exports.create = function *(name){
   var user = yield parse(this);
-  if (!user.name) this.throw(400, '.name required');
-  yield r.table('users').insert(user);
+  // if (!user.name) this.throw(400, '.name required');
+  // yield r.table('users').insert(user);
   this.status = 201;
   this.body = user;
 };
