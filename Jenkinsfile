@@ -2,7 +2,7 @@
 
 node {
   stage('Test') {
-    sh 'npm install'
-    sh 'npm test'
+    def lastTag = ('git describe')
+    echo ${lastTag}
   }
 }
